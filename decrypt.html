@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Decrypt Message | Jay Joshi</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #0b0c1e;
+      color: #ffffff;
+      padding: 40px;
+      text-align: center;
+    }
+    textarea {
+      width: 80%;
+      height: 120px;
+      margin: 10px 0;
+      font-size: 16px;
+      padding: 10px;
+      border-radius: 6px;
+    }
+    input {
+      padding: 10px;
+      border-radius: 5px;
+      font-size: 16px;
+      width: 300px;
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      background: #4ec2f5;
+      border: none;
+      border-radius: 8px;
+      margin-top: 10px;
+      cursor: pointer;
+    }
+    #output {
+      margin-top: 20px;
+      font-size: 18px;
+      color: #a3ffb5;
+      white-space: pre-wrap;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>🔐 Decrypt Form Message</h1>
+  <p>Paste the encrypted message and enter your secret key:</p>
+
+  <textarea id="encrypted" placeholder="Paste encrypted message here..."></textarea><br>
+  <input type="text" id="secretKey" placeholder="Enter your secret key (e.g., JaySecretKey123)"><br>
+  <button onclick="decrypt()">🔓 Decrypt</button>
+
+  <div id="output"></div>
+
+  <script>
+    function decrypt() {
+      const encryptedText = document.getElementById('encrypted').value;
+      const secretKey = document.getElementById('secretKey').value;
+
+      try {
+        const bytes = CryptoJS.AES.decrypt(encryptedText, secretKey);
+        const decryptedText = bytes.toString(CryptoJS.enc.Utf8);
+
+        document.getElementById('output').innerText = decryptedText || '❌ Invalid key or message.';
+      } catch (err) {
+        document.getElementById('output').innerText = '❌ Error decrypting the message.';
+      }
+    }
+  </script>
+
+</body>
+</html>
