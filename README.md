@@ -55,5 +55,4 @@ This website showcases:
 
 ---
 
-## 🔗 Live Site  
-https://jayjoshi08092003.github.io/jayjoshi.github.io/
+
