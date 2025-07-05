@@ -55,9 +55,5 @@ This website showcases:
 
 ---
 
-## 🔗 Live Site
-
-> You can deploy this using GitHub Pages (Settings → Pages → Source: `/root`)
-
-Once deployed, access the site here:  
+## 🔗 Live Site  
 https://jayjoshi08092003.github.io/jayjoshi.github.io/
